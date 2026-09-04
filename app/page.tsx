@@ -67,13 +67,34 @@ export default function Home() {
         });
         setClickCounts(counts);
       } else {
-        setLinks(defaultLinks);
+        // 데이터가 없으면 초기화
+        await initializeLinks();
       }
     } catch (error) {
       console.error("Failed to fetch links:", error);
       setLinks(defaultLinks);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const initializeLinks = async () => {
+    try {
+      const initResponse = await fetch("/api/links/init", { method: "POST" });
+      if (initResponse.ok) {
+        // 초기화 후 다시 로드
+        const response = await fetch("/api/links");
+        const data = await response.json();
+        setLinks(data);
+        const counts: Record<string, number> = {};
+        data.forEach((link: Link) => {
+          counts[link._id] = link.clicks;
+        });
+        setClickCounts(counts);
+      }
+    } catch (error) {
+      console.error("Failed to initialize links:", error);
+      setLinks(defaultLinks);
     }
   };
 
