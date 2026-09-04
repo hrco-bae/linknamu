@@ -27,11 +27,11 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fffaf5] via-[#fff5e6] to-[#f5e6d3] dark:from-[#1a1410] dark:via-[#2d2416] dark:to-[#3d2817] py-12 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#fffaf5] via-[#fff5e6] to-[#f5e6d3] dark:from-[#1a1410] dark:via-[#2d2416] dark:to-[#3d2817] py-12 px-4 sm:px-6">
       <div className="max-w-sm mx-auto">
-        <div className="space-y-8">
+        <div className="space-y-12">
           {/* 프로필 섹션 */}
-          <div className="text-center">
+          <div className="text-center px-2">
             {/* 프로필 사진 */}
             <div className="flex justify-center mb-6">
               <div className="relative">
@@ -56,7 +56,7 @@ export default function Home() {
           </div>
 
           {/* 링크 카드 */}
-          <div className="space-y-3">
+          <div className="space-y-4 px-2">
             {links.map((link) => (
               <a
                 key={link.id}
