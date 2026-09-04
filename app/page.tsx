@@ -1,8 +1,8 @@
 export default function Home() {
   const profile = {
-    name: "김 개 똥",
-    bio: "우주최강 김개똥",
-    profileImage: "https://api.dicebear.com/9.x/avataaars/svg?seed=profile",
+    name: "김개발",
+    bio: "풀스택 개발자 :즘에는 AI 개발에 관심이 많아요",
+    profileImage: "https://placehold.co/150x150/orange/white",
   };
 
   const links = [
@@ -35,7 +35,7 @@ export default function Home() {
             <img
               src={profile.profileImage}
               alt="프로필"
-              className="w-24 h-24 rounded-full object-cover border-4 border-blue-200 dark:border-blue-700"
+              className="w-32 h-32 rounded-full object-cover border-4 border-blue-200 dark:border-blue-700"
             />
           </div>
 
